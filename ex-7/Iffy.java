@@ -13,34 +13,41 @@ public class Iffy {
     * Print out a warning if the value is negative
     * otherwise don't do anything.
     */
+    // Warning printout was not within if-statement.
    public void warnIfNegative(int theValue) {
-      if(theValue < 0);
-      System.out.println("Caution - negative value given (" + theValue + ")");
+      if(theValue < 0){
+        System.out.println("Caution - negative value given (" + theValue + ")");
+      }
    }
-  
+
    /**
     * Print out a warning if the value of anIntProp is negative
     * and also set the value to zero.
     * Otherwise don't do anything.
     */
+    // Again, if-statement did not contain actions to be taken
    public void resetIfNegative() {
-      if(anIntProp < 0)
+      if(anIntProp < 0){
          System.out.println("Caution - negative value given (" + anIntProp + ")");
-      anIntProp = 0;
+         anIntProp = 0;
+      }
    }
 
    /**
     * return true if value is between upperBound and LowerBound
     * (or equal to either bound) otherwise return false.
     */
-   // public boolean isInRange(int value, int upperBound, int lowerBound) {
-   //  if(lowerBound <= value <= upperBound )
-   //    return true;
-   //  else
-   //    return false;
-   //}
+   public boolean isInRange(int value, int upperBound, int lowerBound) {
+     if(upperBound <= lowerBound) {
+       System.out.println("Warning: upper bound is lower than lower bound.")
+     }
+     if(lowerBound <= value && value <= upperBound)
+        return true;
+     else
+        return false;
+   }
 
-   //public boolean isInRangeIfLess(int value, int upperBound, int lowerBound) {
-   //  what goes here?
-   //}
+   public boolean isInRangeIfLess(int value, int upperBound, int lowerBound) {
+     return (lowerBound <= value && value <= upperBound);
+   }
 }
